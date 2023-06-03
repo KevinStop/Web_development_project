@@ -1,5 +1,8 @@
 <?php
 
+use App\Http\Controllers\UsuariosController;
+use App\Http\Controllers\LibrosController;
+use App\Http\Controllers\PrestamosController;
 use Illuminate\Support\Facades\Route;
 
 /*
