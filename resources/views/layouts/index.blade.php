@@ -10,20 +10,20 @@
   <body>
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
         <div class="container">
-          <a class="navbar-brand" href="#">Biblioteca</a>
+          <a class="navbar-brand" href="{{ url('/') }}">Biblioteca</a>
           <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
           </button>
           <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
             <ul class="navbar-nav">
               <li class="nav-item active">
-                <a class="nav-link" href="#">Libros</a>
+                <a class="nav-link" href="{{ route('libros') }}">Libros</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="#">Usuarios</a>
+                <a class="nav-link" href="{{ route('usuarios') }}">Usuarios</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="#">Prestamos</a>
+                <a class="nav-link" href="{{ route('prestamos') }}">Prestamos</a>
               </li>
               <li class="nav-item">
                 <a class="nav-link" href="#">Contacto</a>

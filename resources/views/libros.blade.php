@@ -1,6 +1,6 @@
 @extends('layouts.index')
 
-@section('Titulo Pagina', 'Usuarios')
+@section('Titulo Pagina', 'Libros')
 
     @section('contenido')
     <div class="row mt-3">

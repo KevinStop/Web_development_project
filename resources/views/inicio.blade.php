@@ -4,19 +4,6 @@
 
 @section('contenido')
     <div class="row mt-3">
-        <table class="table">
-            <thead>
-                <th>Nombre</th>
-                <th>Descripcion</th>
-                <th>Proveedor</th>
-                <th>Fecha Elaboracion</th>
-            </thead>
-            <tbody>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-            </tbody>
-        </table>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quidem natus obcaecati dolorem impedit animi dolor minus voluptate nihil reiciendis et, perspiciatis necessitatibus a dolorum, eligendi iure maxime ea beatae fuga.</p>
     </div>
 @endsection
