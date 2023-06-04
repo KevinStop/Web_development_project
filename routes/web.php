@@ -18,6 +18,9 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {return view('inicio');});
 
+//Ruta contacto
+Route::get('/contacto', function () {return view('contacto');});
+
 // Rutas para usuarios
 Route::get('/usuarios', [UsuariosController::class, 'index'])->name('usuarios');
 Route::get('/usuarios/create', [UsuariosController::class, 'create']) -> name ('usuarios.create');
