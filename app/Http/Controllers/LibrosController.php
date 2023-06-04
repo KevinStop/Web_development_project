@@ -20,30 +20,14 @@ class LibrosController extends Controller
     }
 
     public function store(Request $request)
-    {
-        $validator = Validator::make($request->all(), [
-            'titulo' => 'required',
-            'autor' => 'required',
-            'anio_publicacion' => 'required|integer',
-            'categoria' => 'required',
-        ], [
-            'required' => 'El campo :attribute es obligatorio.',
-            'integer' => 'El campo :attribute debe ser un número entero.',
-        ]);
+{
+    
 
-        if ($validator->fails()) {
-            return redirect()->back()->withErrors($validator)->withInput();
-        }
+    
+    return redirect()->route('libros')->with('success', 'Libro agregado correctamente');
+}
 
-        $libro = new Libro;
-        $libro->titulo = $request->titulo;
-        $libro->autor = $request->autor;
-        $libro->anio_publicacion = $request->anio_publicacion;
-        $libro->categoria = $request->categoria;
-        $libro->save();
 
-        return redirect()->route('libros')->with('success', 'Libro agregado correctamente');
-    }
 
     public function edit($id)
     {
