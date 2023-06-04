@@ -22,7 +22,7 @@ class PrestamosController extends Controller
     public function create()
     {
         //
-        return view('ing_Prestamo');
+        return view('prestamo_create');
     }
 
     /**
