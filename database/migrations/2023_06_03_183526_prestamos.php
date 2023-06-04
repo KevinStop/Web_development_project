@@ -21,8 +21,12 @@ return new class extends Migration
 
             $table->foreign('usuario_id')->references('id')->on('usuarios');
             $table->foreign('libro_id')->references('id')->on('libros');
+
+            $table->index('usuario_id');
+            $table->index('libro_id');
         });
     }
+
 
     /**
      * Reverse the migrations.

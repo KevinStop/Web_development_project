@@ -24,7 +24,7 @@ Route::get('/usuarios/create', [UsuariosController::class, 'create']) -> name ('
 Route::get('/usuarios/create/{id}', [UsuariosController::class, 'edit']) -> name ('usuarios.edit');
 Route::post('/usuarios/store', [UsuariosController::class, 'store']) -> name ('usuarios.store');
 Route::post('/usuarios/update/{id}', [UsuariosController::class, 'update']) -> name ('usuarios.update');
-Route::post('/usuarios/destroy/{id}', [UsuariosController::class, 'destroy']) -> name ('usuarios.destroy');
+Route::get('/usuarios/destroy/{id}', [UsuariosController::class, 'destroy']) -> name ('usuarios.destroy');
 
 
 // Rutas para libros
