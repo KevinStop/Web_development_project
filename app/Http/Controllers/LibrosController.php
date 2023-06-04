@@ -2,65 +2,57 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\libros;
+use App\Models\Libro;
 use Illuminate\Http\Request;
 
 class LibrosController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     */
     public function index()
     {
-        $datos = libros::all();
-        return view('libros', compact('datos'));
+        $libros = Libro::all();
+        return view('libros', compact('libros'));
     }
 
-    /**
-     * Show the form for creating a new resource.
-     */
     public function create()
     {
-        //
+        return view('libros_agregar');
     }
 
-    /**
-     * Store a newly created resource in storage.
-     */
     public function store(Request $request)
     {
-        //
+        $libro = new Libro;
+        $libro->titulo = $request->titulo;
+        $libro->autor = $request->autor;
+        $libro->anio_publicacion = $request->anio_publicacion;
+        $libro->categoria = $request->categoria;
+        $libro->save();
+
+        return redirect()->route('libros.index')->with('success', 'Libro agregado correctamente');
     }
 
-    /**
-     * Display the specified resource.
-     */
-    public function show(libros $libros)
+    public function edit($id)
     {
-        //
+        $libro = Libro::findOrFail($id);
+        return view('libros_actualizar', compact('libro'));
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     */
-    public function edit(libros $libros)
+    public function update(Request $request, $id)
     {
-        //
+        $libro = Libro::findOrFail($id);
+        $libro->titulo = $request->titulo;
+        $libro->autor = $request->autor;
+        $libro->anio_publicacion = $request->anio_publicacion;
+        $libro->categoria = $request->categoria;
+        $libro->save();
+
+        return redirect()->route('libros.index')->with('success', 'Libro actualizado correctamente');
     }
 
-    /**
-     * Update the specified resource in storage.
-     */
-    public function update(Request $request, libros $libros)
+    public function destroy($id)
     {
-        //
-    }
+        $libro = Libro::findOrFail($id);
+        $libro->delete();
 
-    /**
-     * Remove the specified resource from storage.
-     */
-    public function destroy(libros $libros)
-    {
-        //
+        return redirect()->route('libros.index')->with('success', 'Libro eliminado correctamente');
     }
 }
