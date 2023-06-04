@@ -7,7 +7,7 @@
     <table class="table table-striped">
         <br>
             <p>
-                <a href="{{route("usuarios.create")}}">Ingresar nuevo usuario</a>
+                <a href="{{route("usuarios.create")}}" class="btn btn-primary">Ingresar usuario</a>
             </p>
         <br>
         <thead>
