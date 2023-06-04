@@ -33,7 +33,7 @@
                         <form action="{{route("usuarios.edit", $dato -> id)}}" method="get" class="px-3">
                             <button class="btn btn-outline-primary btn-sm">Actualizar</button>
                         </form>
-                        <form action="" method="get">
+                        <form action="{{route("usuarios.destroy", $dato -> id)}}" method="get">
                             <button class="btn btn-outline-danger btn-sm">Eliminar</button>
                         </form>
                     </div>

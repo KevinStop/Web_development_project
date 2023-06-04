@@ -32,12 +32,12 @@ class UsuariosController extends Controller
     {
         //Guardar los datos en la base 
         $usuario = new usuarios();
-        $usuario -> nombre = $request->post('nombre');
-        $usuario -> apellido = $request->post('apellido');
-        $usuario -> correo = $request->post('correo');
-        $usuario -> telefono = $request->post('telefono');
-        $usuario -> direccion = $request->post('direccion');
-        $usuario -> save();
+        $usuario->nombre = $request->post('nombre');
+        $usuario->apellido = $request->post('apellido');
+        $usuario->correo = $request->post('correo');
+        $usuario->telefono = $request->post('telefono');
+        $usuario->direccion = $request->post('direccion');
+        $usuario->save();
         return redirect()->route('usuarios');
     }
 
@@ -66,20 +66,26 @@ class UsuariosController extends Controller
     {
         //Envia los datos para actualizarlos en la base de datos
         $usuario = usuarios::find($id);
-        $usuario -> nombre = $request->post('nombre');
-        $usuario -> apellido = $request->post('apellido');
-        $usuario -> correo = $request->post('correo');
-        $usuario -> telefono = $request->post('telefono');
-        $usuario -> direccion = $request->post('direccion');
-        $usuario -> save();
+        $usuario->nombre = $request->post('nombre');
+        $usuario->apellido = $request->post('apellido');
+        $usuario->correo = $request->post('correo');
+        $usuario->telefono = $request->post('telefono');
+        $usuario->direccion = $request->post('direccion');
+        $usuario->save();
         return redirect()->route('usuarios');
     }
 
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(usuarios $usuarios)
+    public function destroy($id)
     {
-        //
+        $usuario = usuarios::find($id);
+        if ($usuario) {
+            $usuario->delete();
+            return redirect()->route('usuarios')->with('success', 'Usuario eliminado correctamente.');
+        } else {
+            return redirect()->route('usuarios')->with('error', 'No se encontró el usuario.');
+        }
     }
 }
