@@ -5,7 +5,7 @@
     @section('contenido')
         <div class="row mt-3">
             <h3>Agregar un usuario</h3>
-            <form action="{{route('usuarios.store_usuario')}}" method="post">
+            <form action="{{route('usuarios.store')}}" method="post">
                 @csrf
                 <label for="">Nombre</label>
                 <input type="text" name="nombre" class="form-control" required>

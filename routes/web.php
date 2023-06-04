@@ -20,11 +20,11 @@ Route::get('/', function () {return view('inicio');});
 
 // Rutas para usuarios
 Route::get('/usuarios', [UsuariosController::class, 'index'])->name('usuarios');
-Route::get('/create_usuario', [UsuariosController::class, 'create']) -> name ('usuarios.create_usuario');
-Route::get('/edit_usuario/{id}', [UsuariosController::class, 'edit']) -> name ('usuarios.edit_usuario');
-Route::post('/store_usuario', [UsuariosController::class, 'store']) -> name ('usuarios.store_usuario');
-Route::post('/update_usuario/{id}', [UsuariosController::class, 'update']) -> name ('usuarios.update_usuario');
-Route::post('/destroy_usuario/{id}', [UsuariosController::class, 'destroy']) -> name ('usuarios.destroy_usuario');
+Route::get('/usuarios/create', [UsuariosController::class, 'create']) -> name ('usuarios.create');
+Route::get('/usuarios/create/{id}', [UsuariosController::class, 'edit']) -> name ('usuarios.edit');
+Route::post('/usuarios/store', [UsuariosController::class, 'store']) -> name ('usuarios.store');
+Route::post('/usuarios/update/{id}', [UsuariosController::class, 'update']) -> name ('usuarios.update');
+Route::post('/usuarios/destroy/{id}', [UsuariosController::class, 'destroy']) -> name ('usuarios.destroy');
 
 
 // Rutas para libros
