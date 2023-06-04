@@ -1,12 +1,12 @@
 @extends('layouts.index')
 
-@section('pageTittle', 'Actualizar Libro')
+@section('pageTitle', 'Actualizar Libro')
 
 @section('contenido')
     <div class="row mt-3">
-        <form action="{{ route('libros.update', $libro->id) }}" method="post">
+        <form action="{{ route('libros.update', $libro->id) }}" method="POST">
             @csrf
-            @method('put')
+            @method('PUT')
             <div class="form-group">
                 <label for="titulo">Título:</label>
                 <input type="text" name="titulo" id="titulo" class="form-control" value="{{ $libro->titulo }}">
