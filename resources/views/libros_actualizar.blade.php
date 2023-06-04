@@ -27,6 +27,7 @@
                 <input type="text" name="categoria" id="categoria" class="form-control" value="{{ $libro->categoria }}">
             </div>
             <button type="submit" class="btn btn-primary mb-4">Actualizar</button>
+            <a href="{{ route('libros') }}" class="btn btn-secondary mb-3">Regresar</a>
         </form>
     </div>
 @endsection
