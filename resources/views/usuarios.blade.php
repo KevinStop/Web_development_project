@@ -2,24 +2,46 @@
 
 @section('Titulo Pagina', 'Usuarios')
 
-    @section('contenido')
-    <div class="row mt-3">
-        <table class="table">
-            
-            <thead>
+@section('contenido')
+<div class="row mt-3">
+    <table class="table table-striped">
+        <br>
+            <p>
+                <a href="{{route("usuarios.create")}}">Ingresar nuevo usuario</a>
+            </p>
+        <br>
+        <thead>
+            <tr>
                 <th>Nombre</th>
-                <th>Descripcion</th>
-                <th>Proveedor</th>
-                <th>Fecha Elaboracion</th>
-            </thead>
-            <tbody>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-            </tbody>
-        </table>
-    </div>
+                <th>Apellido</th>
+                <th>Correo</th>
+                <th>Teléfono</th>
+                <th>Dirección</th>
+                <th >Acciones</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach($datos as $dato)
+            <tr>
+                <td>{{ $dato->nombre }}</td>
+                <td>{{ $dato->apellido }}</td>
+                <td>{{ $dato->correo }}</td>
+                <td>{{ $dato->telefono }}</td>
+                <td>{{ $dato->direccion }}</td>
+                <td>
+                    <div class="btn-group" role="group">
+                        <form action="" method="get" class="px-3">
+                            <button class="btn btn-outline-primary btn-sm">Actualizar</button>
+                        </form>
+                        <form action="" method="get">
+                            <button class="btn btn-outline-danger btn-sm">Eliminar</button>
+                        </form>
+                    </div>
+                </td>
+            </tr>
+            @endforeach
+        </tbody>
+    </table>        
+</div>
 
 @endsection
-

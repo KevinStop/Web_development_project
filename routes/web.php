@@ -19,11 +19,11 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {return view('inicio');});
 
 Route::get('/usuarios', [UsuariosController::class, 'index'])->name('usuarios');
-Route::get('/create', [UsuariosController::class, 'create']) -> name ('usuarios.create');
-Route::get('/edit/{id}', [UsuariosController::class, 'edit']) -> name ('usuarios.edit');
-Route::post('/store', [UsuariosController::class, 'store']) -> name ('usuarios.store');
-Route::post('/update/{id}', [UsuariosController::class, 'update']) -> name ('usuarios.update');
-Route::post('/destroy/{id}', [UsuariosController::class, 'destroy']) -> name ('usuarios.destroy');
+Route::get('/create_usuario', [UsuariosController::class, 'create']) -> name ('usuarios.create_usuario');
+Route::get('/edit_usuario/{id}', [UsuariosController::class, 'edit']) -> name ('usuarios.edit_usuario');
+Route::post('/store_usuario', [UsuariosController::class, 'store']) -> name ('usuarios.store_usuario');
+Route::post('/update_usuario/{id}', [UsuariosController::class, 'update']) -> name ('usuarios.update_usuario');
+Route::post('/destroy_usuario/{id}', [UsuariosController::class, 'destroy']) -> name ('usuarios.destroy_usuario');
 
 Route::get('/libros', [LibrosController::class, 'index'])->name('libros');
 Route::get('/create', [LibrosController::class, 'create']) -> name ('libros.create');

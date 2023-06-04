@@ -22,7 +22,7 @@ class UsuariosController extends Controller
     public function create()
     {
         //Mostrar el formulario donde agregamos los datos
-        return view('agregar');
+        return view('usuariosForm');
     }
 
     /**
@@ -31,13 +31,14 @@ class UsuariosController extends Controller
     public function store(Request $request)
     {
         //Guardar los datos en la base 
-        $producto = new usuarios();
-        $producto -> nombre = $request->post('nombre');
-        $producto -> descripcion = $request->post('descripcion');
-        $producto -> proveedor = $request->post('proveedor');
-        $producto -> fecha_elaboracion = $request->post('fecha_elaboracion');
-        $producto -> save();
-        return redirect()->route('usuarios.index');
+        $usuario = new usuarios();
+        $usuario -> nombre = $request->post('nombre');
+        $usuario -> apellido = $request->post('apellido');
+        $usuario -> correo = $request->post('correo');
+        $usuario -> telefono = $request->post('telefono');
+        $usuario -> direccion = $request->post('direccion');
+        $usuario -> save();
+        return redirect()->route('usuarios');
     }
 
     /**
