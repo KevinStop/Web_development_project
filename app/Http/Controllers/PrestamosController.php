@@ -22,6 +22,7 @@ class PrestamosController extends Controller
     public function create()
     {
         //
+        return view('ing_Prestamo');
     }
 
     /**
@@ -30,6 +31,15 @@ class PrestamosController extends Controller
     public function store(Request $request)
     {
         //
+        $prestamo = new Prestamos;
+        $prestamo->usuario_id = $request->post('usuario_id');
+        $prestamo->libro_id = $request->post('libro_id');
+        $prestamo->fecha_prestamo = $request->post('fecha_prestamo');
+        $prestamo->fecha_devolucion = $request->post('fecha_devolucion');
+
+        $prestamo->save();
+
+        return redirect()->route('prestamos')->with('success', 'El préstamo se ha creado correctamente.');
     }
 
     /**
@@ -51,9 +61,18 @@ class PrestamosController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, prestamos $prestamos)
+    public function update(Request $request, $id)
     {
         //
+        $prestamo = prestamos::find($id);
+        $prestamo->usuario_id= $request->post('usuario_id');
+        $prestamo->libro_id= $request->post('libro_id');
+        $prestamo->fecha_prestamo= $request->post('fecha_prestamo');
+        $prestamo->fecha_devolucion= $request->post('fecha_devolucion');
+
+        $prestamo->save();
+
+        return redirect()->route('prestamos')->with('success', 'El préstamo se ha actualizado correctamente.');
     }
 
     /**
@@ -62,5 +81,8 @@ class PrestamosController extends Controller
     public function destroy(prestamos $prestamos)
     {
         //
+        $prestamos->delete();
+
+        return redirect()->route('prestamos')->with('success', 'El préstamo se ha eliminado correctamente.');
     }
 }
