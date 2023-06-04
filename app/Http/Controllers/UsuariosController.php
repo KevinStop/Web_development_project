@@ -32,12 +32,12 @@ class UsuariosController extends Controller
     {
         //Guardar los datos en la base 
         $usuario = new usuarios();
-        $usuario -> nombre = $request->post('nombre');
-        $usuario -> apellido = $request->post('apellido');
-        $usuario -> correo = $request->post('correo');
-        $usuario -> telefono = $request->post('telefono');
-        $usuario -> direccion = $request->post('direccion');
-        $usuario -> save();
+        $usuario->nombre = $request->post('nombre');
+        $usuario->apellido = $request->post('apellido');
+        $usuario->correo = $request->post('correo');
+        $usuario->telefono = $request->post('telefono');
+        $usuario->direccion = $request->post('direccion');
+        $usuario->save();
         return redirect()->route('usuarios');
     }
 
@@ -55,8 +55,8 @@ class UsuariosController extends Controller
     public function edit($id)
     {
         //Traer los datos de la base y mostrarlos en el formulario
-        $producto = usuarios::find($id);
-        return view('actualizar', compact('producto'));
+        $usuario = usuarios::find($id);
+        return view('usuariosUpdate', compact('usuario'));
     }
 
     /**
@@ -65,20 +65,27 @@ class UsuariosController extends Controller
     public function update(Request $request, $id)
     {
         //Envia los datos para actualizarlos en la base de datos
-        $producto = usuarios::find($id);
-        $producto -> nombre = $request->post('nombre');
-        $producto -> descripcion = $request->post('descripcion');
-        $producto -> proveedor = $request->post('proveedor');
-        $producto -> fecha_elaboracion = $request->post('fecha_elaboracion');
-        $producto -> save();
-        return redirect()->route('productos.index');
+        $usuario = usuarios::find($id);
+        $usuario->nombre = $request->post('nombre');
+        $usuario->apellido = $request->post('apellido');
+        $usuario->correo = $request->post('correo');
+        $usuario->telefono = $request->post('telefono');
+        $usuario->direccion = $request->post('direccion');
+        $usuario->save();
+        return redirect()->route('usuarios');
     }
 
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(usuarios $usuarios)
+    public function destroy($id)
     {
-        //
+        $usuario = usuarios::find($id);
+        if ($usuario) {
+            $usuario->delete();
+            return redirect()->route('usuarios')->with('success', 'Usuario eliminado correctamente.');
+        } else {
+            return redirect()->route('usuarios')->with('error', 'No se encontró el usuario.');
+        }
     }
 }
