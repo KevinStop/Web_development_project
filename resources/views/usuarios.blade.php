@@ -30,7 +30,7 @@
                 <td>{{ $dato->direccion }}</td>
                 <td>
                     <div class="btn-group" role="group">
-                        <form action="" method="get" class="px-3">
+                        <form action="{{route("usuarios.edit", $dato -> id)}}" method="get" class="px-3">
                             <button class="btn btn-outline-primary btn-sm">Actualizar</button>
                         </form>
                         <form action="" method="get">
