@@ -15,6 +15,7 @@
                 <th>ID Libro</th>
                 <th>Fecha prestamo</th>
                 <th>Fecha devolucion</th>
+                <th>Acciones</th>
             </thead>
             <tbody>
                 @foreach ($datos as $dato)
@@ -24,11 +25,15 @@
                         <td>{{ $dato->fecha_prestamo }}</td>
                         <td>{{ $dato->fecha_devolucion }}</td>
                         <td>
-                            <form action="{{ route('prestamos.edit', $dato->id) }}" method="get">
-                                <button class="btn btn-warning btn-sm">Actualizar</button>
-                            </form>
+                            <div class="btn-group" role="group">
+                                <form action="{{ route('prestamos.edit', $dato->id) }}" method="get">
+                                    <button class="btn btn-warning btn-sm" style="margin-right: 10px">Actualizar</button>
+                                </form>
+                                <form action="{{ route('prestamos.destroy', $dato->id) }}" method="get">
+                                    <button class="btn btn-outline-danger btn-sm">Eliminar</button>
+                                </form>
+                            </div>
                         </td>
-                        <td></td>
                     </tr>
                 @endforeach
             </tbody>

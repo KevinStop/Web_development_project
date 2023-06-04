@@ -42,4 +42,4 @@ Route::get('/prestamos/create', [PrestamosController::class, 'create'])->name('p
 Route::get('/prestamos/edit/{id}', [PrestamosController::class, 'edit'])->name('prestamos.edit');
 Route::post('/prestamos/store', [PrestamosController::class, 'store'])->name('prestamos.store');
 Route::post('/prestamos/update/{id}', [PrestamosController::class, 'update'])->name('prestamos.update');
-Route::post('/prestamos/destroy/{id}', [PrestamosController::class, 'destroy'])->name('prestamos.destroy');
+Route::get('/prestamos/destroy/{id}', [PrestamosController::class, 'destroy'])->name('prestamos.destroy');
