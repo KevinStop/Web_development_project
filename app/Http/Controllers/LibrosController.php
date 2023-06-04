@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Libro;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Validator;
 
 class LibrosController extends Controller
 {
@@ -20,6 +21,20 @@ class LibrosController extends Controller
 
     public function store(Request $request)
     {
+        $validator = Validator::make($request->all(), [
+            'titulo' => 'required',
+            'autor' => 'required',
+            'anio_publicacion' => 'required|integer',
+            'categoria' => 'required',
+        ], [
+            'required' => 'El campo :attribute es obligatorio.',
+            'integer' => 'El campo :attribute debe ser un número entero.',
+        ]);
+
+        if ($validator->fails()) {
+            return redirect()->back()->withErrors($validator)->withInput();
+        }
+
         $libro = new Libro;
         $libro->titulo = $request->titulo;
         $libro->autor = $request->autor;
@@ -38,6 +53,16 @@ class LibrosController extends Controller
 
     public function update(Request $request, $id)
     {
+        $validator = Validator::make($request->all(), [
+            'anio_publicacion' => 'nullable|integer',
+        ], [
+            'integer' => 'El campo :attribute debe ser un número entero.',
+        ]);
+
+        if ($validator->fails()) {
+            return redirect()->back()->withErrors($validator)->withInput();
+        }
+
         $libro = Libro::findOrFail($id);
         $libro->titulo = $request->titulo;
         $libro->autor = $request->autor;

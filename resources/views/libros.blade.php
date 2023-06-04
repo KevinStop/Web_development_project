@@ -27,11 +27,11 @@
                         <td>{{ $libro->anio_publicacion }}</td>
                         <td>{{ $libro->categoria }}</td>
                         <td>
-                            <a href="{{ route('libros.edit', $libro->id) }}" class="btn btn-warning btn-sm">Actualizar</a>
+                            <a href="{{ route('libros.edit', $libro->id) }}" class="btn btn-outline-primary btn-sm">Actualizar</a>
                             <form action="{{ route('libros.destroy', $libro->id) }}" method="POST" style="display: inline-block">
                                 @csrf
                                 @method('delete')
-                                <button class="btn btn-danger btn-sm" onclick="return confirm('¿Estás seguro de eliminar este libro?')">Eliminar</button>
+                                <button class="btn btn-outline-danger btn-sm" onclick="return confirm('¿Estás seguro de eliminar este libro?')">Eliminar</button>
                             </form>
                             
                         </td>
