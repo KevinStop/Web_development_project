@@ -27,7 +27,7 @@ class LibrosController extends Controller
         $libro->categoria = $request->categoria;
         $libro->save();
 
-        return redirect()->route('libros.index')->with('success', 'Libro agregado correctamente');
+        return redirect()->route('libros')->with('success', 'Libro agregado correctamente');
     }
 
     public function edit($id)
@@ -45,7 +45,7 @@ class LibrosController extends Controller
         $libro->categoria = $request->categoria;
         $libro->save();
 
-        return redirect()->route('libros.index')->with('success', 'Libro actualizado correctamente');
+        return redirect()->route('libros')->with('success', 'Libro actualizado correctamente');
     }
 
     public function destroy($id)
@@ -53,6 +53,6 @@ class LibrosController extends Controller
         $libro = Libro::findOrFail($id);
         $libro->delete();
 
-        return redirect()->route('libros.index')->with('success', 'Libro eliminado correctamente');
+        return redirect()->route('libros')->with('success', 'Libro eliminado correctamente');
     }
 }

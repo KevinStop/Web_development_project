@@ -32,8 +32,9 @@ Route::get('/libros', [LibrosController::class, 'index'])->name('libros');
 Route::get('/libros/create', [LibrosController::class, 'create'])->name('libros.create');
 Route::get('/libros/edit/{id}', [LibrosController::class, 'edit'])->name('libros.edit');
 Route::post('/libros/store', [LibrosController::class, 'store'])->name('libros.store');
-Route::post('/libros/update/{id}', [LibrosController::class, 'update'])->name('libros.update');
-Route::post('/libros/destroy/{id}', [LibrosController::class, 'destroy'])->name('libros.destroy');
+Route::put('/libros/update/{id}', [LibrosController::class, 'update'])->name('libros.update');
+Route::delete('/libros/destroy/{id}', [LibrosController::class, 'destroy'])->name('libros.destroy');
+
 
 // Rutas para préstamos
 Route::get('/prestamos', [PrestamosController::class, 'index'])->name('prestamos');
