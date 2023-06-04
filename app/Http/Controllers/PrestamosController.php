@@ -53,9 +53,11 @@ class PrestamosController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(prestamos $prestamos)
+    public function edit($id)
     {
         //
+        $prestamo = prestamos::find($id);
+        return view('prestamo_update', compact('prestamo'));
     }
 
     /**
@@ -72,17 +74,24 @@ class PrestamosController extends Controller
 
         $prestamo->save();
 
-        return redirect()->route('prestamos')->with('success', 'El préstamo se ha actualizado correctamente.');
+        return redirect()->route('prestamos');
     }
 
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(prestamos $prestamos)
+    public function destroy($id)
     {
         //
-        $prestamos->delete();
+        $prestamos = prestamos::find($id);
+        if ($prestamos) {
 
-        return redirect()->route('prestamos')->with('success', 'El préstamo se ha eliminado correctamente.');
+            $prestamos->delete();
+            return redirect()->route('prestamos')->with('success', 'Usuario eliminado correctamente.');
+
+        } else {
+
+            return redirect()->route('prestamos')->with('error', 'No se encontró el usuario.');
+        }
     }
 }

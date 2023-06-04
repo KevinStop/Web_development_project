@@ -18,13 +18,16 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {return view('inicio');});
 
+//Ruta contacto
+Route::get('/contacto', function () {return view('contacto');});
+
 // Rutas para usuarios
 Route::get('/usuarios', [UsuariosController::class, 'index'])->name('usuarios');
 Route::get('/usuarios/create', [UsuariosController::class, 'create']) -> name ('usuarios.create');
 Route::get('/usuarios/create/{id}', [UsuariosController::class, 'edit']) -> name ('usuarios.edit');
 Route::post('/usuarios/store', [UsuariosController::class, 'store']) -> name ('usuarios.store');
 Route::post('/usuarios/update/{id}', [UsuariosController::class, 'update']) -> name ('usuarios.update');
-Route::post('/usuarios/destroy/{id}', [UsuariosController::class, 'destroy']) -> name ('usuarios.destroy');
+Route::get('/usuarios/destroy/{id}', [UsuariosController::class, 'destroy']) -> name ('usuarios.destroy');
 
 
 // Rutas para libros
@@ -42,4 +45,4 @@ Route::get('/prestamos/create', [PrestamosController::class, 'create'])->name('p
 Route::get('/prestamos/edit/{id}', [PrestamosController::class, 'edit'])->name('prestamos.edit');
 Route::post('/prestamos/store', [PrestamosController::class, 'store'])->name('prestamos.store');
 Route::post('/prestamos/update/{id}', [PrestamosController::class, 'update'])->name('prestamos.update');
-Route::post('/prestamos/destroy/{id}', [PrestamosController::class, 'destroy'])->name('prestamos.destroy');
+Route::get('/prestamos/destroy/{id}', [PrestamosController::class, 'destroy'])->name('prestamos.destroy');

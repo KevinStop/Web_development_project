@@ -26,7 +26,7 @@
                 <a class="nav-link" href="{{ route('prestamos') }}">Prestamos</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="#">Contacto</a>
+                <a class="nav-link" href="{{ url('/contacto') }}">Contacto</a>
               </li>
             </ul>
           </div>
