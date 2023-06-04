@@ -23,7 +23,13 @@ class LibrosController extends Controller
 {
     
 
-    
+    $libro = new Libro;
+    $libro->titulo = $request->titulo;
+    $libro->autor = $request->autor;
+    $libro->anio_publicacion = $request->anio_publicacion;
+    $libro->categoria = $request->categoria;
+    $libro->save();
+
     return redirect()->route('libros')->with('success', 'Libro agregado correctamente');
 }
 
