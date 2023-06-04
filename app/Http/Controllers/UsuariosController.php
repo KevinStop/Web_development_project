@@ -22,7 +22,7 @@ class UsuariosController extends Controller
     public function create()
     {
         //Mostrar el formulario donde agregamos los datos
-        return view('usuariosForm');
+        return view('usuariosCreate');
     }
 
     /**
