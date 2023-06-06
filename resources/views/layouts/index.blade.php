@@ -31,7 +31,7 @@
             </ul>
           </div>
         </div>
-      </nav>      
+      </nav>
     <div class="container">
       @yield('contenido')
     </div>
@@ -39,7 +39,7 @@
         <div class="container">
           <div class="row">
             <div class="col-12 text-center">
-              <h5>Síguenos en redes sociales</h5>
+              <h5 class="p-3">Síguenos en redes sociales</h5>
               <ul class="list-unstyled list-inline social-icons">
                 <li class="list-inline-item">
                   <a href="#" target="_blank" title="Facebook"><i class="fab fa-facebook"></i></a>
@@ -59,7 +59,7 @@
             </div>
           </div>
         </div>
-      </footer>      
+      </footer>
   </body>
 </html>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"></script>
