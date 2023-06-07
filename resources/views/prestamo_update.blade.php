@@ -22,7 +22,7 @@
                 <label for="libro_id" style="margin-bottom: 1%">Título del Libro</label>
                 <select id="libro_id" name="libro_id" class="form-control custom-input" required>
                     @foreach($libros as $libro)
-                        <option value="{{ $libro->id }}">{{ $libro->id }}. {{ $libro->titulo }}</option>
+                        <option value="{{ $libro->id }}">{{ $libro->id }} {{ $libro->titulo }}</option>
                     @endforeach
                 </select>
                 <div id="libro_id_error" class="text-danger" style="display: none;">No puede ingresar números negativos.</div>
