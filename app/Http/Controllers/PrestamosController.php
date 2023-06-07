@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use App\Models\prestamos;
+use App\Models\Libro;
+use App\Models\usuarios;
 use Illuminate\Http\Request;
 
 class PrestamosController extends Controller
@@ -22,7 +24,9 @@ class PrestamosController extends Controller
     public function create()
     {
         //
-        return view('prestamo_create');
+        $libros = Libro::all();
+        $usuarios = usuarios::all();
+        return view('prestamo_create', compact('usuarios', 'libros'));
     }
 
     /**
@@ -57,7 +61,9 @@ class PrestamosController extends Controller
     {
         //
         $prestamo = prestamos::find($id);
-        return view('prestamo_update', compact('prestamo'));
+        $libros = Libro::all();
+        $usuarios = usuarios::all();
+        return view('prestamo_update', compact('prestamo','usuarios', 'libros'));
     }
 
     /**
@@ -67,10 +73,10 @@ class PrestamosController extends Controller
     {
         //
         $prestamo = prestamos::find($id);
-        $prestamo->usuario_id= $request->post('usuario_id');
-        $prestamo->libro_id= $request->post('libro_id');
-        $prestamo->fecha_prestamo= $request->post('fecha_prestamo');
-        $prestamo->fecha_devolucion= $request->post('fecha_devolucion');
+        $prestamo->usuario_id = $request->post('usuario_id');
+        $prestamo->libro_id = $request->post('libro_id');
+        $prestamo->fecha_prestamo = $request->post('fecha_prestamo');
+        $prestamo->fecha_devolucion = $request->post('fecha_devolucion');
 
         $prestamo->save();
 
@@ -88,7 +94,6 @@ class PrestamosController extends Controller
 
             $prestamos->delete();
             return redirect()->route('prestamos')->with('success', 'Usuario eliminado correctamente.');
-
         } else {
 
             return redirect()->route('prestamos')->with('error', 'No se encontró el usuario.');

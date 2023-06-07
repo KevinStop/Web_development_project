@@ -14,29 +14,37 @@
         <form action="{{ route('prestamos.store') }}" method="post">
             @csrf
             <div class="form-group">
-                <label for="usuario_id" style="margin-bottom: 1%">ID Usuario</label>
-                <input type="number" id="usuario_id" name="usuario_id" class="form-control custom-input" required>
-                <div id="usuario_id_error" class="text-danger" style="display: none;">No puede ingresar números
-                    negativos.</div>
+                <label for="usuario_id" style="margin-bottom: 1%">Usuario</label>
+                <select id="usuario_id" name="usuario_id" class="form-control custom-input" required>
+                    <option value="">Seleccionar Usuario</option>
+                    @foreach($usuarios as $usuario)
+                        <option value="{{ $usuario->id }}">{{$usuario->id}}. {{ $usuario->nombre }}</option>
+                    @endforeach
+                </select>
+                <div id="usuario_id_error" class="text-danger" style="display: none;">No puede ingresar números negativos.</div>
             </div><br>
-
+        
             <div class="form-group">
-                <label for="libro_id" style="margin-bottom: 1%">ID Libro</label>
-                <input type="number" id="libro_id" name="libro_id" class="form-control custom-input" required>
-                <div id="libro_id_error" class="text-danger" style="display: none;">No puede ingresar números
-                    negativos.</div>
+                <label for="libro_id" style="margin-bottom: 1%">Libro</label>
+                <select id="libro_id" name="libro_id" class="form-control custom-input" required>
+                    <option value="">Seleccionar Libro</option>
+                    @foreach($libros as $libro)
+                        <option value="{{ $libro->id }}">{{ $libro->id }}. {{ $libro->titulo }}</option>
+                    @endforeach
+                </select>
+                <div id="libro_id_error" class="text-danger" style="display: none;">No puede ingresar números negativos.</div>
             </div><br>
-
+        
             <div class="form-group">
                 <label for="fecha_prestamo" style="margin-bottom: 1%">Fecha Prestamo</label>
                 <input type="date" id="fecha_prestamo" name="fecha_prestamo" class="form-control custom-input" required>
             </div><br>
-
+        
             <div class="form-group">
                 <label for="fecha_devolucion" style="margin-bottom: 1%">Fecha Devolucion</label>
                 <input type="date" id="fecha_devolucion" name="fecha_devolucion" class="form-control custom-input" required>
             </div><br>
-
+        
             <div class="form-group">
                 <a href="{{ route('prestamos') }}" class="btn btn-secondary">Regresar</a>
                 <button class="btn btn-primary">Agregar</button>

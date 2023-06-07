@@ -20,8 +20,8 @@
             <tbody>
                 @foreach ($datos as $dato)
                     <tr>
-                        <td>{{ $dato->usuario_id }}</td>
-                        <td>{{ $dato->libro_id }}</td>
+                        <td>{{ $dato->usuario_id}}.  {{ $dato->usuario->nombre }}</td>
+                        <td>{{ $dato->libro_id }}.  {{ $dato->libro->titulo }}</td>
                         <td>{{ $dato->fecha_prestamo }}</td>
                         <td>{{ $dato->fecha_devolucion }}</td>
                         <td>
