@@ -71,6 +71,9 @@
               transform: scaleX(1);
               transform-origin: left;
             }
+            img{
+              max-height: 250px;
+            }
           </style>
   <!-- Encabezado con imagen de fondo -->
 
@@ -153,7 +156,7 @@
         </div>
         <div class="col-6 col-md-5">
           <div class="card">
-            <img src="https://img.freepik.com/fotos-premium/pongase-contacto-nosotros-mano-empresario-sosteniendo-telefono-inteligente-movil-icono-correo-telefono-correo-electronico_52701-38.jpg" class="card-img-top" alt="Imagen de contacto">
+            <img src="https://pps.whatsapp.net/v/t61.24694-24/264493385_628210945129001_210078889738383951_n.jpg?ccb=11-4&oh=01_AdRGcUQN9OcZFsR9UM3Vj02J1PYZdJBVhlEHVd1yWzrWtw&oe=648E54E6" class="card-img-top" alt="Imagen de contacto">
             <div class="card-body">
               <h5 class="card-title">Información de Contacto</h5>
               <ul class="list-group">
