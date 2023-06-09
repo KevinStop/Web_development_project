@@ -63,7 +63,7 @@ class PrestamosController extends Controller
         $prestamo = prestamos::find($id);
         $libros = Libro::all();
         $usuarios = usuarios::all();
-        return view('prestamo_update', compact('prestamo','usuarios', 'libros'));
+        return view('prestamo_update', compact('prestamo', 'usuarios', 'libros'));
     }
 
     /**
@@ -71,17 +71,19 @@ class PrestamosController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
         $prestamo = prestamos::find($id);
-        $prestamo->usuario_id = $request->post('usuario_id');
-        $prestamo->libro_id = $request->post('libro_id');
-        $prestamo->fecha_prestamo = $request->post('fecha_prestamo');
-        $prestamo->fecha_devolucion = $request->post('fecha_devolucion');
-
+        $usuario = usuarios::where('nombre', $request->input('usuario_id'))->first();
+        if ($usuario) {
+            $prestamo->usuario_id = $usuario->id;
+        }
+        $prestamo->libro_id = $request->input('libro_id');
+        $prestamo->fecha_prestamo = $request->input('fecha_prestamo');
+        $prestamo->fecha_devolucion = $request->input('fecha_devolucion');
         $prestamo->save();
 
         return redirect()->route('prestamos');
     }
+
 
     /**
      * Remove the specified resource from storage.
