@@ -14,16 +14,21 @@
         <form action="{{ route('prestamos.update', $prestamo->id) }}" method="post">
             @csrf
             <div class="form-group">
-                <label for="usuario_id" style="margin-bottom: 1%">ID Usuario</label>
-                <input type="number" id="usuario_id" name="usuario_id" class="form-control custom-input" required value="{{$prestamo -> usuario_id}}">
+                <label for="usuario_id" style="margin-bottom: 1%">Nombre del Usuario</label>
+                <input type="text" id="usuario_id" name="usuario_id" class="form-control custom-input" required value="{{$prestamo->usuario->nombre}}" readonly>
                 <div id="usuario_id_error" class="text-danger" style="display: none;">No puede ingresar números negativos.</div>
             </div><br>
             <div class="form-group">
                 <label for="libro_id" style="margin-bottom: 1%">Título del Libro</label>
-                <label for="libro_id" style="margin-bottom: 1%">ID Libro</label>
-                <input type="number" id="libro_id" name="libro_id" class="form-control custom-input" required value="{{$prestamo -> libro_id}}">
+                <select id="libro_id" name="libro_id" class="form-control custom-input" required>
+                    @foreach($libros as $libro)
+                        <option value="{{$libro->id}}" @if($libro->id == $prestamo->libro_id) selected @endif>
+                            {{$libro->id}} - {{$libro->titulo}}
+                        </option>
+                    @endforeach
+                </select>
                 <div id="libro_id_error" class="text-danger" style="display: none;">No puede ingresar números negativos.</div>
-            </div><br>
+            </div><br>            
 
             <div class="form-group">
                 <label for="fecha_prestamo" style="margin-bottom: 1%">Fecha Prestamo</label>
