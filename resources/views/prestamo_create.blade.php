@@ -2,11 +2,6 @@
 
 @section('Titulo Pagina', 'Ingresar Prestamos')
 
-<style>
-    .custom-input {
-        max-width: 450px;
-    }
-</style>
 
 @section('contenido')
     <div class="row mt-3">
@@ -18,7 +13,7 @@
                 <select id="usuario_id" name="usuario_id" class="form-control custom-input" required>
                     <option value="">Seleccionar Usuario</option>
                     @foreach($usuarios as $usuario)
-                        <option value="{{ $usuario->id }}">{{$usuario->id}} {{ $usuario->nombre }}</option>
+                        <option value="{{ $usuario->id }}">({{$usuario->id}}) {{ $usuario->nombre }}</option>
                     @endforeach
                 </select>
                 <div id="usuario_id_error" class="text-danger" style="display: none;">No puede ingresar números negativos.</div>
@@ -29,7 +24,7 @@
                 <select id="libro_id" name="libro_id" class="form-control custom-input" required>
                     <option value="">Seleccionar Libro</option>
                     @foreach($libros as $libro)
-                        <option value="{{ $libro->id }}">{{ $libro->id }} {{ $libro->titulo }}</option>
+                        <option value="{{ $libro->id }}">({{ $libro->id }}) {{ $libro->titulo }}</option>
                     @endforeach
                 </select>
                 <div id="libro_id_error" class="text-danger" style="display: none;">No puede ingresar números negativos.</div>

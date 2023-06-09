@@ -33,8 +33,8 @@
                 <input type="text" name="categoria" id="categoria" class="form-control custom-input" value="{{ $libro->categoria }}">
             </div>
             <div class="d-flex">
-                <button type="submit" class="btn btn-primary me-2">Actualizar</button>
                 <a href="{{ route('libros') }}" class="btn btn-secondary">Regresar</a>
+                <button type="submit" class="btn btn-primary me-2">Actualizar</button>
             </div>
         </form>
     </div>

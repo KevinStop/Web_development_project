@@ -5,31 +5,44 @@
     @section('contenido')
         <div class="row mt-3">
             <h3>Actualizar un usuario</h3>
-            <form action="{{route("usuarios.update",$usuario -> id)}}" method="post" id="formulario">
+            <form action="{{ route('usuarios.update', $usuario->id) }}" method="post" id="formulario">
                 @csrf
-                <label for="">Nombre</label>
-                <input type="text" name="nombre" id="nombre" class="form-control" required value="{{$usuario -> nombre}}">
-                <small id="error-nombre" class="text-danger"></small>
-                <br>
-                <label for="">Apellido</label>
-                <input type="text" name="apellido" id="apellido" class="form-control" required value="{{$usuario -> apellido}}">
-                <small id="error-apellido" class="text-danger"></small>
-                <br>
-                <label for="">Correo</label>
-                <input type="email" name="correo" id="correo" class="form-control" required value="{{$usuario -> correo}}">
-                <small id="error-correo" class="text-danger"></small>
-                <br>
-                <label for="">Telefono</label>
-                <input type="number" name="telefono" id="telefono" class="form-control" required value="{{$usuario -> telefono}}">
-                <small id="error-telefono" class="text-danger"></small>
-                <br>
-                <label for="">Direccion</label>
-                <input type="text" name="direccion" id="direccion" class="form-control" required value="{{$usuario -> direccion}}">
-                <small id="error-direccion" class="text-danger"></small>
-                <br>
-                <a href="{{route("usuarios")}}" class="btn btn-secondary">Regresar</a>
-                <button class="btn btn-success" onclick="validarFormulario(event)">Actualizar</button>
-            </form>
+                @method('PUT')
+                <div class="form-group">
+                  <label for="nombre">Nombre</label>
+                  <input type="text" name="nombre" id="nombre" class="form-control custom-input" required value="{{ $usuario->nombre }}">
+                  <small id="error-nombre" class="text-danger"></small>
+                </div><br>
+              
+                <div class="form-group">
+                  <label for="apellido">Apellido</label>
+                  <input type="text" name="apellido" id="apellido" class="form-control custom-input" required value="{{ $usuario->apellido }}">
+                  <small id="error-apellido" class="text-danger"></small>
+                </div><br>
+              
+                <div class="form-group">
+                  <label for="correo">Correo</label>
+                  <input type="email" name="correo" id="correo" class="form-control custom-input" required value="{{ $usuario->correo }}">
+                  <small id="error-correo" class="text-danger"></small>
+                </div><br>
+              
+                <div class="form-group">
+                  <label for="telefono">Telefono</label>
+                  <input type="number" name="telefono" id="telefono" class="form-control custom-input" required value="{{ $usuario->telefono }}">
+                  <small id="error-telefono" class="text-danger"></small>
+                </div><br>
+              
+                <div class="form-group">
+                  <label for="direccion">Direccion</label>
+                  <input type="text" name="direccion" id="direccion" class="form-control custom-input" required value="{{ $usuario->direccion }}">
+                  <small id="error-direccion" class="text-danger"></small>
+                </div><br>
+              
+                <div class="form-group">
+                  <a href="{{ route('usuarios') }}" class="btn btn-secondary">Regresar</a>
+                  <button class="btn btn-primary" onclick="validarFormulario(event)">Actualizar</button>
+                </div><br>
+              </form>              
         </div>
 
         <script>

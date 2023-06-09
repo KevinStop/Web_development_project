@@ -52,8 +52,8 @@
                     <div class="text-danger">{{ $message }}</div>
                 @enderror
             </div>
-            <button type="submit" class="btn btn-primary mb-3">Agregar</button>
             <a href="{{ route('libros') }}" class="btn btn-secondary mb-3">Regresar</a>
+            <button type="submit" class="btn btn-primary mb-3">Agregar</button>
         </form>
     </div>
 
