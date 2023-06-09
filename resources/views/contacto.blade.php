@@ -85,13 +85,13 @@
     <div class="row d-flex align-items-center justify-content-center">
       <div class="col-6 col-md-5">
         <div class="card">
-          <img src="https://img.freepik.com/fotos-premium/pongase-contacto-nosotros-mano-empresario-sosteniendo-telefono-inteligente-movil-icono-correo-telefono-correo-electronico_52701-38.jpg" class="card-img-top" alt="Imagen de contacto">
+          <img src="https://lh3.googleusercontent.com/3N88O1lN_R-vqnP1sdfpobJzJeaGBRnUyo0AyFDEfLF5ThcoC4sP_DwoG0Ph7EmdLHaTN5ZYjYZ8pgzxwFp_dqQZBZXqcaHYTH12eEgju9BV5Q4j5T4a5fpKW9Pg4_qfhFnaUeahvMB8JwS4eninuT6R9XfY2F6tQDhZGLu3OCRYJcIe-8_d6iRf1C8-vWcILusurQFByGrtTpNJ0G6G_3jFZWpMyyWDtt0djuUwQAp7NxowyywTwcUXgo0lkuRIps0z_SBIpJX356ZltEbbY-g7E2FTC3ryjJsLki_fEYJN6z2tE9YxUmsbcorkg0WNcXpPUGTtiYckaghNm74nrtsSPLKhSUmHPf66ZL7F19G7hTF6HKIBgZfzwRcDsk9ABnc-CBqPjc5SqnuwxyDWla02M2NTDBWCAPv7ctR8C-PnO4I1btfZ-ffhw0zd7hC5vuRMmajH_90NNxvaG5gjGKcEXQJxS8jkBNcw_LUJenY9avvMm7-2X0jIrSKVCJ0lQ2x3Xk4aEBtNqBZIDVukEqNWD8Ctg33SF0Hjya8f4983mupjv61EgQZ7uhxfy1NAmmGBwedT1LCuE6-JS6dWAer0YtJ3FaIf-Swr3TpInqu43YNRydoAL2Y_ZWV4mlQFiHGCylTq8DUOXjh7j8Iyep3fPWrzkj-nLIV-kdaINks8gUbQRPFEITLjNPNQRNNq05BQGWciWTix0shgaqEAQg5BjVuhx3wFtBWOYdkEfcDqtMqEqKqGauemysMUbzLZpGjFPyGwAq-FaajyCLutQGvBzjoWAI95HgWdlkdt67cIQHKk98IhoIg2RP7BN--iX17GYHZccqyQVKB83BXNu0dRp9onT4P26M_fX4IG1o7z0Y_bSy3VzPbUpp8k60O3fdRj_O0NQfkJf-2aup4avY4r6jxQbfgFZLHVoumlR-e8TnWpq97pjvB9dWy3AxMUFg2bARNqXgISTgliq3U=w899-h660-s-no?authuser=1" class="card-img-top" alt="Imagen de contacto">
           <div class="card-body">
             <h5 class="card-title">Información de Contacto</h5>
             <ul class="list-group">
               <li class="list-group-item"><i class="fas fa-phone"></i> Teléfono: 0963148209</li>
               <li class="list-group-item"><i class="fas fa-envelope"></i> Email: ovavellan@espe.edu.ec</li>
-              <li class="list-group-item"><i class="fas fa-map-marker-alt"></i> Dirección: Calle Principal, Ciudad, País</li>
+              <li class="list-group-item"><i class="fas fa-map-marker-alt"></i> Dirección: Av. Tsáchila, Guayaqul, Santo Domingo, Ecuador</li>
             </ul>
             <ul class="social-icons text-center">
               <li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
