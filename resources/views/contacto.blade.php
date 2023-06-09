@@ -133,7 +133,7 @@
     <div class="row d-flex align-items-center justify-content-center mb-3">
         <div class="col-6 col-md-5">
           <div class="card">
-            <img src="https://img.freepik.com/fotos-premium/pongase-contacto-nosotros-mano-empresario-sosteniendo-telefono-inteligente-movil-icono-correo-telefono-correo-electronico_52701-38.jpg" class="card-img-top" alt="Imagen de contacto">
+            <img src="https://tork.news/__export/1657770808238/sites/tork/img/2022/07/14/screenshot_20220714-005004_instagram_x1x.jpg_1753094345.jpg" class="card-img-top" alt="Imagen de contacto">
             <div class="card-body">
               <h5 class="card-title">Información de Contacto</h5>
               <ul class="list-group">
